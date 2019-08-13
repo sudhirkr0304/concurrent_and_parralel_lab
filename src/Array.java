@@ -40,6 +40,31 @@ public class Array
         System.out.println("");
     }
 
+    public void modify(int position , int element)
+    {
+        if(position >= size)
+        {
+            System.out.println(" !!! there is no element at that position ");
+
+        }
+        else
+        {
+            arr[position]=element;
+
+            System.out.println("no of elements = "+size);
+            System.out.println("size of array = "+initial_size);
+            System.out.print("elements = ");
+            for(int i=0;i<size;i++)
+            {
+                System.out.print(arr[i]+" ");
+            }
+            System.out.println("");
+            System.out.println("");
+
+
+        }
+    }
+
     public void delete()
     {
         if(size == 0)

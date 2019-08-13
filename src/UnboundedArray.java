@@ -14,8 +14,9 @@ public class UnboundedArray
         while(true)
         {
             System.out.println("1. Add element to array");
-            System.out.println("2 . Delete element from array");
-            System.out.println("3 . Exit program");
+            System.out.println("2.Modify element from array");
+            System.out.println("3 . Delete element from array");
+            System.out.println("4 . Exit program");
             System.out.println("");
 
             int choice;
@@ -33,9 +34,19 @@ public class UnboundedArray
             }
             else if(choice == 2)
             {
-                array.delete(); // delete method
+                int pos,ele;
+                System.out.println("Enter the position ( 0 indexed ) :");
+                pos=sc.nextInt();
+                System.out.println("Enter the new element : ");
+                ele = sc.nextInt();
+
+                array.modify(pos,ele);
             }
             else if(choice == 3)
+            {
+                array.delete(); // delete method
+            }
+            else if(choice == 4)
             {
                 break;
             }
