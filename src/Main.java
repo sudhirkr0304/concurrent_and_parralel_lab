@@ -17,7 +17,7 @@ public class Main
        uba.delete();
        System.out.println(uba.get_array());
        
-         uba.delete(1,3);
+        uba.delete(1,3);
        System.out.println(uba.get_array());
        
        
