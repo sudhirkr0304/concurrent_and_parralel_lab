@@ -1,12 +1,15 @@
-import java.util.*;
+package Assignment2;
 
-public class UnboundedArray2
+import java.util.*;
+import java.lang.*;
+public class UnboundedArray
 {
+
     private static int size = 0;
     public static int capacity;
     private static int[] arr;
 
-    public UnboundedArray2( int initial_size)
+    public UnboundedArray( int initial_size)
     {
         arr = new int[initial_size];
         capacity = initial_size;
@@ -20,6 +23,7 @@ public class UnboundedArray2
         }
         else
         {
+            System.out.println(element+" is inserted");
             arr[size] = element;
             size++;
         }
@@ -28,12 +32,12 @@ public class UnboundedArray2
     public String get_array()
     {
         int[] arr2 = new int[size];
-        
+
         for(int i=0;i<size;i++)
         {
             arr2[i] = arr[i];
         }
-       return Arrays.toString(arr2);
+        return Arrays.toString(arr2);
     }
 
     public int getSize()
@@ -53,6 +57,7 @@ public class UnboundedArray2
         }
         else
         {
+            System.out.println(arr[0]+" is deleted");
             int[] arr2 = new int[capacity];
             for(int i=1;i<size;i++)
             {
@@ -72,13 +77,14 @@ public class UnboundedArray2
             System.out.println(" !!! Index out of range !!!");
         }
         {
+            System.out.println(" element at index "+ index + " is deleted");
             int flag = 0;
             int[] arr2 = new int[capacity];
             for(int i=0;i<size;i++)
             {
                 if(i == index)
                 {
-                  continue;
+                    continue;
                 }
                 else
                 {
@@ -97,30 +103,31 @@ public class UnboundedArray2
     {
         if( startIndex < 0 || startIndex > size)
         {
-             System.out.println(" !!! index out of range !!!");
+            System.out.println(" !!! index out of range !!!");
         }
         else if(endIndex < 0 || endIndex > size || endIndex < startIndex)
         {
-             System.out.println(" !!! index out of range !!!");
+            System.out.println(" !!! index out of range !!!");
         }
 
         else
         {
+            System.out.println("element from index" + startIndex + "to index"+endIndex+ " is deleted");
             int[] arr2 = new int[capacity];
             int flag=0;
             for(int i=0;i<size;i++)
-               {
-                   if(i >= startIndex && i <= endIndex)
-                    {
-                        continue;
-                    }
-                    arr2[flag] = arr[i];
-                   flag++;
+            {
+                if(i >= startIndex && i <= endIndex)
+                {
+                    continue;
                 }
+                arr2[flag] = arr[i];
+                flag++;
+            }
             arr = arr2;
             size = size -(endIndex - startIndex +1);
         }
-       
+
     }
 
     public void modify(int index , int newElement)
@@ -131,9 +138,10 @@ public class UnboundedArray2
         }
         else
         {
-             arr[index] = newElement;
+            System.out.println("element at index " + index+" is modified");
+            arr[index] = newElement;
         }
-       
+
 
     }
 }
