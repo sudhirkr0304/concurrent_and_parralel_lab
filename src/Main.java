@@ -2,7 +2,7 @@ public class Main
 {
     public static void main(String [] args)
     {
-        UnboundedArray uba = new UnboundedArray(10);
+        UnboundedArray2 uba = new UnboundedArray2(10);
 
         uba.insert(1);
         uba.insert(2);
