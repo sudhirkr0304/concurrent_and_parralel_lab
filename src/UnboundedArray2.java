@@ -33,7 +33,7 @@ public class UnboundedArray2
         {
             arr2[i] = arr[i];
         }
-        return Arrays.toString(arr2);
+       return Arrays.toString(arr2);
     }
 
     public int getSize()
